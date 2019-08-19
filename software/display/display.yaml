@@ -15,18 +15,18 @@ spec:
         - "Starting up..."
     WAITING:
       seq:
-        - ms: 2000
+        - duration: 2000
           lines:
             # "0123456789ABCDEF"  <-- Ruler
             - "Badge to start"
             - "ID: {machine}"
-        - ms: 2000
+        - duration: 2000
           refresh: 1000
           lines:
             # "0123456789ABCDEF"  <-- Ruler
             - "Badge to start"
             - "idle: {time}"
-        - ms: 2000
+        - duration: 2000
           refresh: 1000
           lines:
             # "0123456789ABCDEF"  <-- Ruler
@@ -49,23 +49,23 @@ spec:
         - "Wrong badge?"
     AUTHORIZED:
       seq:
-        - ms: 2000  # show for 2 sec
+        - duration: 2000  # show for 2 sec
           lines:
             - "Authorized"
             - "Green to start"
-        - ms: 2000  # show for 2 sec
+        - duration: 2000  # show for 2 sec
           lines:
             - "Authorized"
             - "Waiting..."
     RUNNING:          
       seq:
-        - ms: 4000 # show for 4sec
+        - duration: 4000 # show for 4sec
           refresh: 250 # refresh timer 4x /sec
           lines:
           # "0123456789ABCDEF"  <-- Ruler
           - "Time Remaining"
           - "{time}"
-        - ms: 4000 # show for 4sec
+        - duration: 4000 # show for 4sec
           lines:
           # "0123456789ABCDEF"  <-- Ruler
           - "Active User"

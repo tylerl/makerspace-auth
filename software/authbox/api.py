@@ -118,7 +118,7 @@ class BaseDerivedThread(threading.Thread):
     while True:
       try:
         self.run_inner()
-      except Exception as e:
+      except Exception:
         traceback.print_exc()
 
 
@@ -167,7 +167,7 @@ class MultiProxy(object):
     if isinstance(getattr(self.objs[0], name), types.MethodType):
       return MultiMethodProxy(self.objs, name)
     else:
-      return getattr(self.objs[0], name)
+      return getattr(self.objs[0], name)  # XXX: So first one only?
 
 
 def split_escaped(s, glue=',', preserve=False):
